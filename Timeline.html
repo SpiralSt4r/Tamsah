@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Gulzar&family=New+Tegomin&display=swap" rel="stylesheet">
+<style>
+  html {
+        scroll-behavior: smooth;
+    }
+
+   body {
+       font-family: "Amiri", serif;
+       background-color: #dedbd3;
+       direction: rtl;
+       unicode-bidi: plaintext; 
+    }
+    
+    .button-class {
+        display: inline-block;
+       background-color: none;
+       color: #80736b;;
+       border-radius: 10px;
+       border: 2px dashed #80736b;;
+       text-decoration: none;
+       padding: 3px 6px;
+       font-size: 10px;
+       text-align: center;
+       width: 100px;
+       height: 20px ;
+
+    }
+    header {
+    h1 {
+     font-family:  'Gulzar', Helvetica, sans-serif; 
+     text-align: center; 
+     font-size: 50px;
+     margin-top: -30px;
+     }
+     p {
+       text-align: center; 
+        word-spacing: 0.6em; 
+        margin-top: -20px; 
+        color: rgb(133, 108, 93);
+     }
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 300px;
+      margin: 0 auto;
+  }
+
+    .dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+    }
+    .line {
+        width: 4px;
+        height: 60px;
+    }
+
+    .info {
+        text-align: center;
+        padding: 10px 0;
+        p {
+           margin: 2px 0;
+           color: #746760;
+        }
+        h2 {
+            margin: -1px 0;
+        }
+        img {
+            width: 200px;
+            margin: 8px;
+            border: 2px solid #746760;
+            border-radius: 20px;
+        }
+    }
+
+</style>
+</head>
+<body>
+    <a href="index.html" class="button-class">
+      الرجوع للصفحة الرئيسة</a>
+    <header>
+    <h1>المواسم</h1>
+    <p>  الموسم الحالي -> الموسم الأول </p>
+    </header>
+    <div class="timeline">
+
+      <div class="line" style="background: #80736b;"></div>
+      <div class="dot" style="background: #80736b;"></div>
+      <div class="info">
+          <p> 2026 </p>
+          <h2> الموسم الأول </h2>
+          <p> لم يتم الحسم </p>
+          <img src="cat.jpg" style="border: 2px dashed #746760;">
+      </div>
+    
+      <div class="line" style="background: #a5a5a5;"></div>
+      <div class="dot" style="background: #a5a5a5;"></div>
+      <div class="info">
+          <p> 2025 </p>
+          <h2> الموسم التجريبي </h2>
+          <p> لا يوجد فائز </p>
+          <img src="cat.jpg">
+      </div> 
+
+    </div>
+</body>
+</html>

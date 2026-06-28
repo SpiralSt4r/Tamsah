@@ -20,7 +20,26 @@ body {
     direction: rtl;
     unicode-bidi: plaintext;
 }
-
+ol {
+    list-style: none;
+    direction: rtl;
+    counter-reset: my-counter;
+     padding-right: 20px;
+     text-align: right;
+     font-size: 500;
+}
+ol li {
+    counter-increment: my-counter;
+    list-style: none;
+}
+ol li::before{
+    content: counter(my-counter, arabic-indic);
+    font-size: 26px;
+    font-weight: bold;
+    color: #7e3c3c;
+    text-align: right;
+       padding-left: 10px;
+}
 
 .page {
   position: relative;
@@ -132,75 +151,25 @@ section {
     border-bottom: 2px solid #bdbaa8;
     padding: 11px 0px 25px 0px;
 }
-
-
-.fight {
-    position: relative;
-    max-width: 340px;
-    margin: 40px auto;
-    width: 100%;
+.bar-labels {
+display: flex;
+justify-content: space-between;
+max-width: 340px;
+margin: 0 auto;
+font-size: 13px;
+font-weight: bold;
 }
-
-.fight-teams {
-    position: relative;
-    max-width: 340px;
-    margin: 40px auto;
-    width: 100%;
-}
-
-.fight-track {
+.bar {
 height: 22px;
-    border: 2px solid #35271e;
-    background: #E5E1D8;
-    position: relative;
-    overflow: hidden;
-    direction: ltr;
+display: flex;
+direction: ltr;
+border: 2px solid #35271e;
+max-width: 340px;
+margin: 10px auto;
+border-radius: 10px;
+overflow: hidden;
+
 }
-
-.fight-team1 {
-    position: absolute;
-    right: 0; top: 0; bottom: 0;
-    background: #9d5d5d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: 700;
-    color: #fff;
-    transition: width 1s ease;
-    overflow: hidden;
-    white-space: nowrap;
-  } 
-
-.fight-team2 {
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    background: #1E4A7A;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: 700;
-    color: #fff;
-    transition: width 1s ease;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.fight-Symbol {
-     position: absolute;
-    top: 3px;
-    transform: translate(50%, 90%);
-    font-size: 22px;
-}
-
-.fight-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    color: #7A7468;
-    margin-bottom: 6px;
-  }
 
 .timeline {
     position: relative;
@@ -249,7 +218,6 @@ margin-top: 12px;
 font-size: 13px;
 font-weight: bold;
 color: #35271e;
-text-align: center;
 }
 
 
@@ -312,77 +280,140 @@ footer {
     </style>
 </head>
 <body>
-    <div class="page">
+
+<div class="page">
+
+
     <header>
-    <p style="  font-family: 'Cascadia', sans-serif; text-align: center; margin-bottom: -30px; font-weight: 700; font-style: italic; word-spacing: 0.2em ; font-size: 8px; color: rgb(133, 108, 93)">⭑ الموسم الأول من</p>
-    <h1 style=" font-family:  'Gulzar', Helvetica, sans-serif; text-align: center; font-size: 50px;">طمسة</h1>
-<p style=" text-align: center;  word-spacing: 0.6em; margin-top: -80px; color: rgb(133, 108, 93)">حيث يولد الإبداع في حدود الدين.</p>
+     <p style="  font-family: 'Cascadia', sans-serif; text-align: center; margin-bottom: -30px; font-weight: 700; font-style: italic; word-spacing: 0.2em ; font-size: 8px; color: rgb(133, 108, 93)">⭑ الموسم الأول من</p>
+     <h1 style=" font-family:  'Gulzar', Helvetica, sans-serif; text-align: center; font-size: 50px;">طمسة</h1>
+     <p style=" text-align: center;  word-spacing: 0.6em; margin-top: -80px; color: rgb(133, 108, 93)">حيث يولد الإبداع في حدود الدين.</p>
     </header>
+
+
     <nav> 
-<a href="#Whoarewe">من نحن؟</a>
-<a href="#guide">دليل</a>
-<a href="#Rules">القواعد</a>
-<a href="#progress">تقدم الفرق</a>
-<a href="#museum">المتحف</a>
+      <a href="#Whoarewe">من نحن؟</a>
+      <a href="#guide">دليل</a>
+      <a href="#Rules">القواعد</a>
+      <a href="#progress">تقدم الفرق</a>
+      <a href="#museum">المتحف</a>
     </nav>
+
+
     <section id="Whoarewe">
-<h2>✷ من نحن ؟</h2>
-<p>طمسة هو موقع لفعالية  مخصصة للرسامين، خصيصًا الطامسين. حيث يتم تقسيمنا إلى فريقين ( أو ثلاثة ) 
+     <h2>✷ من نحن ؟</h2>
+     <p>طمسة هو موقع لفعالية  مخصصة للرسامين، خصيصًا الطامسين. حيث يتم تقسيمنا إلى فريقين ( أو ثلاثة ) 
     لنتقاتل بالفن. يهدف إلى لم شمل الطامسين ورفع روحهم الرياضية وتطوير مهاراتهم!</p>
-    <img src="cat.jpg"  alt="Image one"  width="100" height="100" style="border-radius: 20px; animation-name: myAnimation; animation-duration: 9s; animation-iteration-count: infinite;">
+     <img src="cat.jpg"  alt="Image one"  width="100" height="100" style="border-radius: 20px; animation-name: myAnimation; animation-duration: 9s; animation-iteration-count: infinite;">
     </section>
+
+    
     <div class="torn"></div>
+
+
     <section id="guide">
-<h2>✷ الدليل</h2>
-<p> حسنًا! فل نشرح المسابقة بشكل أكثر دقة </p>
+     <h2>✷ الدليل</h2>
+     <div style="display: flex; gap: 10px; align-items: self-start;">
+         <p> حسنًا! فل نشرح المسابقة بشكل أكثر دقة </p>
+
+         <img src="cat.jpg" style="width: 100px;;">
+
+     </div>
     </section>
+
+
      <div class="torn"></div>
+
+
     <section id="Rules">
-<h2>✷ القواعد</h2>
-<p>حيث يتولد الإبداع بين حدود الدين.</p>
+         <h2>✷ القواعد</h2>
+         <p>حيث يتولد الإبداع بين حدود الدين.</p>
+         <ol>
+			<li>أن تكوني فتاة</li>
+			<li>أن تكوني فوق ١٢ سنوات</li>
+			<li>أن تكون المشاركات لا تحتوي على ذوات أروا ( أي أن ترسمي ملمح واحد أو الأفضل بدون ملامح )</li>
+            <li>عدم استخدام الذكاء الاصطناعي لأي من الهجمات</li>
+            <li></li>
+         </ol>
     </section>
+
+
      <div class="torn"></div>
+
+
     <section id="progress">
-<h2>✷ تقدم الفريقين</h2>
-<p>حيث يتولد الإبداع بين حدود الدين.</p>
-    <div class="timeline">
-        <p style=" text-align: center; margin-top: 12px; margin-bottom: -12px; font-size: 18px; font-weight: bold; color: #35271e;"> مدة الموسم </p> 
-        <div class="timeline-date">
-            <span> محرم 9</span>
-            <span> صفر 17 </span>
+        <h2>✷ تقدم الفريقين</h2>
+        <p>حيث يتولد الإبداع بين حدود الدين.</p>
+
+        <div class="bar-labels">
+            <span style="color: #7e3c3c;"> 30 نقطة </span>
+            <span style="color: #837575;"> 50 نقطة </span>
         </div>
-        <div class="timeline-track">
+
+
+        <div class="bar">
+            <div id="team1" style=" background: #9d5d5d; height: 100%;"></div>
+            <div id="team2" style=" background: #929292; height: 100%;"></div>
+        </div>
+
+
+
+
+        <div class="timeline">
+             <p style=" text-align: center; margin-top: 12px; margin-bottom: -12px; font-size: 18px; font-weight: bold; color: #35271e;"> مدة الموسم </p> 
+             <div class="timeline-date">
+               <span> محرم 9</span>
+               <span> صفر 17 </span>
+             </div>
+         <div class="timeline-track">
             <div class="timeline-fill" id="fill"></div>
-        </div>
+         </div>
             <span class="timeline-star" id="star">✦</span>
         <div class="timeline-label" id="label">جاري الحساب</div>
     </div>
     </section>
-     <div class="torn"></div>
+
+
+    <div class="torn"></div>
+
+
     <section id="museum">
-<h2 style="text-align: center;">المتحف</h2>
-<a href="مسرح.html">
-<img src="cat.jpg" alt="HTML tutorial" style="width:42px;height:42px;">
-</a>
-<p>حيث يتولد الإبداع بين حدود الدين.</p>
+       <h2 style="text-align: center;">المتحف</h2>
+       <a href="مسرح.html">
+          <img src="cat.jpg" alt="HTML tutorial" style="width:42px;height:42px;">
+       </a>
+       <p>حيث يتولد الإبداع بين حدود الدين.</p>
     </section>
-     <div class="torn"></div>
+
+
+    <div class="torn"></div>
+
+
     <div class="sum">
-<p>لتسليم أي مشاركة أو استفسار حول طمسة، يمكنك التواصل عبر منصة الإستغرام</p>
-    <h2 style=" font-family: 'New Tegomin', serif; text-align: center;">@Spiral_St4r</h2>
-    <p>أرسلي رسمتك مع اسم فريقك واسمك أو لقبك</p> 
-     <a href="https://www.instagram.com/spiral_st4r?igsh=ZDBkeGtuN3hzNmk%3D&utm_source=qr">
-        <img src="cat.jpg"  alt="art" style="width:42px;height:42px;   animation: squish 1s ease-in-out infinite;">
-    </a>
-</div>
+       <p>لتسليم أي مشاركة أو استفسار حول طمسة، يمكنك التواصل عبر منصة الإستغرام</p>
+       <h2 style=" font-family: 'New Tegomin', serif; text-align: center;">@Spiral_St4r</h2>
+       <p>أرسلي رسمتك مع اسم فريقك واسمك أو لقبك</p> 
+       <a href="https://www.instagram.com/spiral_st4r?igsh=ZDBkeGtuN3hzNmk%3D&utm_source=qr">
+           <img src="cat.jpg"  alt="art" style="width:42px;height:42px;   animation: squish 1s ease-in-out infinite;">
+        </a>
+    </div>
+
+
     <footer>
-     <p>حقوق المشروع ترجع إلى مريم و نجمة والمشرفين </p>
-     <p>── ⋆ ⋅  2026  ⋅ ⋆ ──</p>
-        </footer>
+        <p>حقوق المشروع ترجع إلى مريم و نجمة والمشرفين </p>
+        <p>── ⋆ ⋅  2026  ⋅ ⋆ ──</p>
+    </footer>
+
+
 </div>
 <script>
 
+    const احمر = 60;  /* ← غيري هذا */
+    const ازرق = 40;  /* ← وهذا */
 
+     const مجموع = احمر + ازرق;
+     document.getElementById('team1').style.width = (احمر / مجموع * 100) + '%';
+     document.getElementById('team2').style.width = (ازرق / مجموع * 100) + '%';
 
 
   const start = new Date('2026-06-25');
@@ -394,10 +425,14 @@ footer {
   const pct      = Math.min(Math.max(passed / total * 100, 0), 100).toFixed(1);
   const daysLeft = Math.max(0, Math.ceil((end - now) / 86400000));
 
+  function toArabic(n) {
+  return n.toString().replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+  }
+
   document.getElementById('fill').style.width = pct + '%';
   document.getElementById('star').style.right  = pct + '%';
-  document.getElementById('label').textContent =
-    daysLeft > 0 ? 'متبقي ' + daysLeft + ' يوم' :'انتهى الموسم !';
+ document.getElementById('label').textContent =
+  daysLeft > 0 ? 'متبقي ' + toArabic(daysLeft) + ' يوم' : 'انتهى الموسم';
 </script>
 </body>
 </html>
