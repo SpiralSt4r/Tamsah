@@ -6,7 +6,7 @@
     <title>index.html</title>
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Gulzar&family=New+Tegomin&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Gulzar&family=Lateef:wght@200;300;400;500;600;700;800&family=New+Tegomin&display=swap" rel="stylesheet">
     <style> 
     
     html {
@@ -32,13 +32,38 @@ ol li {
     counter-increment: my-counter;
     list-style: none;
 }
-ol li::before{
+ol li::before {
     content: counter(my-counter, arabic-indic);
     font-size: 26px;
     font-weight: bold;
     color: #7e3c3c;
     text-align: right;
-       padding-left: 10px;
+    padding-left: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-right: 20px ;
+}
+ul li::before {
+    font-size: 20px;
+     text-align: right;
+     content: '★';
+     color: #7e3c3c;
+    padding-left: 4px;
+}
+ul ul {
+    list-style: none;
+    padding: 0;
+    margin-right: 20px ;
+}
+ul ul li::before {
+    font-size: 20px;
+     text-align: right;
+     content: '✧';
+     color: #7e3c3c;
+    padding-left: 4px;
 }
 
 .page {
@@ -105,10 +130,10 @@ top: 0;
 }
 nav a {
     color: #35271e !important;
-   font-family: "Amiri", serif;
+  font-family: "Lateef", serif;
   padding: 7px 14px;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 500;
     text-decoration: none;
    margin-left: 3px;
     margin-right: -6px;
@@ -122,7 +147,8 @@ nav a:last-child
 }
 
 nav a.active {
-    color: #7e3c3c;
+    color: #7e3c3c !important;
+    font-weight: 700;
 }
 
 
@@ -146,11 +172,24 @@ section {
        font-family: "Aref Ruqaa", serif;
     }
     p {
+         margin-left: 18px;
          margin-right: 18px;
     }
     border-bottom: 2px solid #bdbaa8;
     padding: 11px 0px 25px 0px;
+     scroll-margin-top: 50px;
 }
+
+.teamnames {
+display: flex;
+justify-content: space-between;
+max-width: 250px;
+margin: 0 auto;
+font-size: 20px;
+font-weight: bold;
+font-family: "Aref Ruqaa", serif;
+}
+
 .bar-labels {
 display: flex;
 justify-content: space-between;
@@ -302,8 +341,7 @@ footer {
 
     <section id="Whoarewe">
      <h2>✷ من نحن ؟</h2>
-     <p>طمسة هو موقع لفعالية  مخصصة للرسامين، خصيصًا الطامسين. حيث يتم تقسيمنا إلى فريقين ( أو ثلاثة ) 
-    لنتقاتل بالفن. يهدف إلى لم شمل الطامسين ورفع روحهم الرياضية وتطوير مهاراتهم!</p>
+     <p>طمسة هو موقع لفعالية  مخصصة للرسامين، خصيصًا الطامسين. حيث يتم تقسيمنا إلى فريقين ( أو ثلاثة ) لنتقاتل بالفن. يهدف إلى لم شمل الطامسين ورفع روحهم الرياضية وتطوير مهاراتهم!</p>
      <img src="cat.jpg"  alt="Image one"  width="100" height="100" style="border-radius: 20px; animation-name: myAnimation; animation-duration: 9s; animation-iteration-count: infinite;">
     </section>
 
@@ -313,12 +351,32 @@ footer {
 
     <section id="guide">
      <h2>✷ الدليل</h2>
-     <div style="display: flex; gap: 10px; align-items: self-start;">
-         <p> حسنًا! فل نشرح المسابقة بشكل أكثر دقة </p>
-
+     <p style="margin-bottom: -10px ;"> حسنًا! فل نشرح المسابقة بشكل أكثر دقة </p>
+     <p style="margin-bottom: -10px ;"> في كل موسم ينقسم المتنافسين إلى فريقين - يتغير اسم الفرق لكل موسم -</p>
+     <p style="margin-bottom: -10px ;"> كل فريق يهجم على أعضاء الفريق الآخر برسمه ويسجل بها نقاط لفريقه</p>
+     <p style="margin-bottom: -10px ;"> الفريق الفائز هو الحاصل على أكبر عدد نقاط في نهاية الموسم.</p>
+     <p > ملاحظة </p>
+     <p style="margin-bottom: -10px ;"></p>
+     <p style="margin-bottom: -10px ;">ويتم حساب النقاط على الشكل التالي :</p>
+     <div style="display: flex; gap: 10px; align-items: center; ">
+       <ul>
+        <li>الرأس لوحده ⬅ 0 نقطة</li>
+        <li>إلى منتصف الجسد ⬅ 0 نقطة</li>
+        <li>كامل الجسد ⬅ 0 نقطة</li>
+        <li>مع خلفية :</li>
+        <ul>
+               <li>خلفية بسيطة ⬅ 0 نقطة</li>
+               <li>خلفية معقدة ⬅ 0 نقطة</li>
+        </ul>
+         <li>إذا كان رسم تحريك :</li>
+        <ul>
+               <li>تحريك بسيط ⬅ 0 نقطة</li>
+               <li>تحلريك معقد ⬅ 0 نقطة</li>
+        </ul>
+     </ul>       
          <img src="cat.jpg" style="width: 100px;;">
-
      </div>
+
     </section>
 
 
@@ -327,14 +385,15 @@ footer {
 
     <section id="Rules">
          <h2>✷ القواعد</h2>
-         <p>حيث يتولد الإبداع بين حدود الدين.</p>
+         <p>عند رغبتك في الإلتحاق، هذه هي شروطنا وقواعدنا :</p>
          <ol>
 			<li>أن تكوني فتاة</li>
-			<li>أن تكوني فوق ١٢ سنوات</li>
-			<li>أن تكون المشاركات لا تحتوي على ذوات أروا ( أي أن ترسمي ملمح واحد أو الأفضل بدون ملامح )</li>
+			<li>أن تكوني فوق ١٢ سنة</li>
+			<li>أن تكون المشاركات لا تحتوي على ذوات أرواح ( أي أن ترسمي ملمح واحد أو الأفضل بدون ملامح )</li>
             <li>عدم استخدام الذكاء الاصطناعي لأي من الهجمات</li>
             <li></li>
          </ol>
+         <p>إذا لم يتم توفي هذه الشروط أو عدم الإلتزام بها، فلن تلتحق في المسابقة وقد تُطرد من الإلتحاق فور معرفتنا بالمخالفة.</p>
     </section>
 
 
@@ -344,7 +403,11 @@ footer {
     <section id="progress">
         <h2>✷ تقدم الفريقين</h2>
         <p>حيث يتولد الإبداع بين حدود الدين.</p>
-
+        <div class="teamnames">
+            <span style="color: #7e3c3c;">الذهبي</span>
+            <span style="color: #837575;">الفضي</span>
+        </div>
+            <img src="cat.jpg"  alt="Image one"  width="200" height="200">
         <div class="bar-labels">
             <span style="color: #7e3c3c;"> 30 نقطة </span>
             <span style="color: #837575;"> 50 نقطة </span>
@@ -378,11 +441,15 @@ footer {
 
 
     <section id="museum">
-       <h2 style="text-align: center;">المتحف</h2>
+       <h2>✷ المتحف</h2>
+       <p>لرؤية مشاركات الموسم الحالي، لما لا تُجرب الدخول لمتحفنا؟</p>
        <a href="مسرح.html">
           <img src="cat.jpg" alt="HTML tutorial" style="width:42px;height:42px;">
        </a>
-       <p>حيث يتولد الإبداع بين حدود الدين.</p>
+       <p>وإذا كُنت تريد رؤية الفريق الفائز - أو تاريخ الفائزين - يمكنك <br> الدخول عبر هذا الباب!</p>
+       <a href="Timeline.html">
+          <img src="cat.jpg" alt="HTML tutorial" style="width:42px;height:42px;">
+       </a>
     </section>
 
 
@@ -400,16 +467,33 @@ footer {
 
 
     <footer>
-        <p>حقوق المشروع ترجع إلى مريم و نجمة والمشرفين </p>
+        <p>تنظيم طمسة وتصميم الموقع ومحتواه يرجع إلى مريم والمشرفين.</p>
         <p>── ⋆ ⋅  2026  ⋅ ⋆ ──</p>
     </footer>
 
 
 </div>
 <script>
+    const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a');
 
-    const احمر = 60;  /* ← غيري هذا */
-    const ازرق = 40;  /* ← وهذا */
+window.addEventListener('scroll', () => {
+  sections.forEach(section => {
+    const top    = section.offsetTop - 60;
+    const bottom = top + section.offsetHeight;
+
+    if (window.scrollY >= top && window.scrollY < bottom) {
+      navLinks.forEach(link => link.classList.remove('active'));
+      const active = document.querySelector(`nav a[href="#${section.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+});
+
+
+
+    const احمر = 50;  /* ← غيري هذا */
+    const ازرق = 30;  /* ← وهذا */
 
      const مجموع = احمر + ازرق;
      document.getElementById('team1').style.width = (احمر / مجموع * 100) + '%';

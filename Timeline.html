@@ -18,21 +18,7 @@
        direction: rtl;
        unicode-bidi: plaintext; 
     }
-    
-    .button-class {
-        display: inline-block;
-       background-color: none;
-       color: #80736b;;
-       border-radius: 10px;
-       border: 2px dashed #80736b;;
-       text-decoration: none;
-       padding: 3px 6px;
-       font-size: 10px;
-       text-align: center;
-       width: 100px;
-       height: 20px ;
 
-    }
     header {
     h1 {
      font-family:  'Gulzar', Helvetica, sans-serif; 
@@ -45,6 +31,14 @@
         word-spacing: 0.6em; 
         margin-top: -20px; 
         color: rgb(133, 108, 93);
+     }
+     img {
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       padding: 10px;
+       position: relative;
+       z-index: 1;
      }
     }
 
@@ -87,9 +81,10 @@
 </style>
 </head>
 <body>
-    <a href="index.html" class="button-class">
-      الرجوع للصفحة الرئيسة</a>
     <header>
+           <a href="index.html">
+              <img src="cat.jpg" alt="HTML tutorial" style="width:42px;height:42px;">
+           </a>
     <h1>المواسم</h1>
     <p>  الموسم الحالي -> الموسم الأول </p>
     </header>
