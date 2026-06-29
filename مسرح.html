@@ -90,18 +90,26 @@
         background:  linear-gradient(135deg, #d5a937, #C9A84C 25%, #F0D080 40%, #C9A84C 55%, #d5a937 70%, #C9A84C 85%, #F0D080);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
          z-index: 2;
-
     }
     .frame-inner {
         border: 1px solid #77520d;
         overflow: hidden;
     }
-    .frame img {
+     .frame img {
   max-width: 100;
   height: 80px;
   object-fit: contain;
   display: block;
   position: relative;
+  background-color: #ffffff;
+}
+       .frame video {
+  max-width: 100;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  background-color: #ffffff;
 }
 .teambanner1 {
         padding: 3px;
@@ -132,17 +140,25 @@ text-align: right;
 color: #201f1e;
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.062), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  z-index: 1;
+ margin-top: -4px;
+ margin-bottom: 20px;
 }
 .artworks {
   display: flex;
   gap: 40px;
   justify-content: center;
 }
-.paper {
-    display: flex; 
-    gap: 75px; 
-    justify-content: center; 
-    margin-top: -4px;
+
+.round {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px;
+}
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -161,51 +177,19 @@ color: #201f1e;
         <h1>المتحف</h1>
         <p>. ݁₊ ⊹ . ݁ الموسم الأول ⟡ ݁ ١٤٤٨هـ ݁ . ⊹ ₊ ݁.</p>
     </header>
+              <!--  hhhh  -->
+                <article class="round">
 
-             <!--  padding -->
+                    <div class="left">
+                        <div class="frame">
+                           <div class="frame-inner">
+                                <!--  banner -->
 
-         <div style="padding: 6px;">  
+                              <div class="teambanner2">فريق ذهبي</div>
 
-             <!--  framing -->
-
-           <div class="artworks">
-
-
-                <div class="frame">
-                     <div class="frame-inner">
-                         <!--  banner -->
-
-                             <div class="teambanner1">فريق ذهبي</div>
-
-                         <!--  banner -->
-                        <img src="33.png">
-                     </div>
-                </div>
-
-
-                 <div class="frame">
-                     <div class="frame-inner">
-                         <!--  banner -->
-
-                             <div class="teambanner2">فريق ذهبي</div>
-
-                         <!--  banner -->
-                        <img src="222.png">
-                     </div>
-                </div>
-
-
-           </div>
-           
-             <!--  framing -->
-
-            <!--  card  -->
-
-                 <div class="paper"> 
-                     <div class="info">
-                         <p>الرسام -- </p>
-                         <p> الهدف -- </p>
-                         <p> مجموع النقاط ---</p>
+                                 <!--  banner -->
+                               <img src="44.png">
+                           </div>
                      </div>
 
                      <div class="info">
@@ -213,57 +197,16 @@ color: #201f1e;
                          <p> الهدف -- </p>
                          <p> مجموع النقاط ---</p>
                      </div>
-                 </div>
 
-            <!--  card  -->
+                     <div class="frame">
+                           <div class="frame-inner">
+                                <!--  banner -->
 
-            </div>  
+                              <div class="teambanner2">فريق ذهبي</div>
 
-             <!--  padding -->
-            <!--  padding -->
-
-         <div style="padding: 6px;">  
-
-             <!--  framing -->
-
-           <div class="artworks">
-
-
-                <div class="frame">
-                     <div class="frame-inner">
-                         <!--  banner -->
-
-                             <div class="teambanner1">فريق ذهبي</div>
-
-                         <!--  banner -->
-                        <img src="555.gif">
-                     </div>
-                </div>
-
-
-                 <div class="frame">
-                     <div class="frame-inner">
-                         <!--  banner -->
-
-                             <div class="teambanner2">فريق ذهبي</div>
-
-                         <!--  banner -->
-                        <img src="44.png">
-                     </div>
-                </div>
-
-
-           </div>
-           
-             <!--  framing -->
-
-            <!--  card  -->
-
-                 <div class="paper"> 
-                     <div class="info">
-                         <p>الرسام -- </p>
-                         <p> الهدف -- </p>
-                         <p> مجموع النقاط ---</p>
+                                 <!--  banner -->
+                               <img src="222.png">
+                           </div>
                      </div>
 
                      <div class="info">
@@ -271,13 +214,78 @@ color: #201f1e;
                          <p> الهدف -- </p>
                          <p> مجموع النقاط ---</p>
                      </div>
-                 </div>
 
-            <!--  card  -->
+                     <div class="frame">
+                           <div class="frame-inner">
+                                <!--  banner -->
 
-            </div>  
+                              <div class="teambanner2">فريق ذهبي</div>
 
-             <!--  padding -->
+                                 <!--  banner -->
+                               <video height="170px" width="100px" controls >
+                                  <source src="vido.MP4" type="video/mp4" >
+                                     Your browser does not support the video tag.
+                                  </video>
+                           </div>
+                     </div>
+
+                     <div class="info">
+                         <p>الرسام -- </p>
+                         <p> الهدف -- </p>
+                         <p> مجموع النقاط ---</p>
+                     </div>
+
+
+                    </div>
+                    
+                    
+                    <div class="right">
+
+                    
+                     <div class="frame">
+                           <div class="frame-inner">
+                                <!--  banner -->
+
+                              <div class="teambanner2">فريق ذهبي</div>
+
+                                 <!--  banner -->
+                               <img src="33.png">
+                           </div>
+                     </div>
+
+                     <div class="info">
+                         <p>الرسام -- </p>
+                         <p> الهدف -- </p>
+                         <p> مجموع النقاط ---</p>
+                     </div>
+
+                     <div class="frame">
+                           <div class="frame-inner">
+                                <!--  banner -->
+
+                              <div class="teambanner1">فريق فضي</div>
+
+                                 <!--  banner -->
+                               <img src="555.gif" height="170px" width="100px">
+                           </div>
+                     </div>
+
+                     <div class="info">
+                         <p>الرسام -- </p>
+                         <p> الهدف -- </p>
+                         <p> مجموع النقاط ---</p>
+                     </div>
+
+
+                    </div>
+
+                    
+
+
+                        
+                    </div>
+
+                </article>
 
   <script>
         window.addEventListener('DOMContentLoaded', () => {
