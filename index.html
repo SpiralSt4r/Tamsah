@@ -157,6 +157,9 @@ nav a.active {
   25% , 75% {left:0px; top:15px;}
 }
 
+ .squish {
+        animation: squish 0.2s ease;
+ }
     @keyframes squish {
         0%, 100% { transform: scale(1, 1); /* Normal size */}
         25% { transform: scale(1.1, 0.9); /* Wider, shorter */ }
@@ -342,7 +345,8 @@ footer {
     <section id="Whoarewe">
      <h2>✷ من نحن ؟</h2>
      <p>طمسة هو موقع لفعالية  مخصصة للرسامين، خصيصًا الطامسين. حيث يتم تقسيمنا إلى فريقين ( أو ثلاثة ) لنتقاتل بالفن. يهدف إلى لم شمل الطامسين ورفع روحهم الرياضية وتطوير مهاراتهم!</p>
-     <img src="cat.jpg"  alt="Image one"  width="100" height="100" style="border-radius: 20px; animation-name: myAnimation; animation-duration: 9s; animation-iteration-count: infinite;">
+     <p>وعن من هي <i>طمسة كـ شخص؟</i> هذه مُرشتك بالطبع! سعيدةٌ لمساعدتك في أي وقت. إضغط عليها لترحيبها!</p>
+     <img id="soundImage"  src="cat.jpg"  alt="Image one"  width="100" height="100">
     </section>
 
     
@@ -371,12 +375,18 @@ footer {
          <li>إذا كان رسم تحريك :</li>
         <ul>
                <li>تحريك بسيط ← 0 نقطة</li>
-               <li>تحلريك معقد ← 0 نقطة</li>
+               <li>تحريك معقد ← 0 نقطة</li>
+        </ul>
+        <li>نوع الرسمة :</li>
+        <ul>
+               <li>رسمة بسيطة { تشيبي } ← 0 نقطة</li>
+               <li>رسمة معقدة ← 0 نقطة</li>
         </ul>
      </ul>       
          <img src="cat.jpg" style="width: 100px;;">
      </div>
-
+     <p > ملاحظة أُخرى، قد تزيد نقاطك كلما كانت التفاصيل أكثر { يعتمد على رأي المنسق - مريم أم المشرفين } </p>
+     <p > ملاحظة </p>
     </section>
 
 
@@ -389,8 +399,9 @@ footer {
          <ol>
 			<li>أن تكوني فتاة</li>
 			<li>أن تكوني فوق ١٢ سنة</li>
-			<li>أن تكون المشاركات لا تحتوي على ذوات أرواح ( أي أن ترسمي ملمح واحد أو الأفضل بدون ملامح )</li>
+			<li>أن تكون المشاركات لا تحتوي على ذوات أرواح <br> { أي أن ترسمي ملمح واحد أو الأفضل بدون ملامح }</li>
             <li>عدم استخدام الذكاء الاصطناعي لأي من الهجمات</li>
+            <li> أن يكون حسابك خالي من المحرمات  <br> { الموسيقى، فتيات غير محجبات أو محتوى غير لائق }</li>
             <li></li>
          </ol>
          <p>إذا لم يتم توفي هذه الشروط أو عدم الإلتزام بها، فلن تلتحق في المسابقة وقد تُطرد من الإلتحاق فور معرفتنا بالمخالفة.</p>
@@ -457,10 +468,12 @@ footer {
 
 
     <div class="sum">
-       <p>لتسليم أي مشاركة أو استفسار حول طمسة، يمكنك التواصل عبر منصة الإستغرام</p>
-       <h2 style=" font-family: 'New Tegomin', serif; text-align: center;">@Spiral_St4r</h2>
-       <p>أرسلي رسمتك مع اسم فريقك واسمك أو لقبك</p> 
-       <a href="https://www.instagram.com/spiral_st4r?igsh=ZDBkeGtuN3hzNmk%3D&utm_source=qr">
+       <p>للاستفسار حول طمسة، يمكنك التواصل عبر منصة الإستغرام</p>
+       <a href="https://www.instagram.com/spiral_st4r?igsh=ZDBkeGtuN3hzNmk%3D&utm_source=qr" style="text-decoration-style: wavy; text-decoration-color: #ada49b;">
+      <h2 style=" font-family: 'New Tegomin', serif; text-align: center;">@Spiral_St4r</h2>
+        </a>
+       <p>أضغطي على مرشدتك اللطيفة لإرسال مشاركتك ووضعها في المتحف!</p> 
+       <a href="https://docs.google.com/forms/d/e/1FAIpQLScq8V1qWfQUuzt2ZPaqtAhLnvGqEwH_eD7HDaDjeuCpAa_RoQ/viewform?usp=publish-editor">
            <img src="cat.jpg"  alt="art" style="width:42px;height:42px;   animation: squish 1s ease-in-out infinite;">
         </a>
     </div>
@@ -468,12 +481,41 @@ footer {
 
     <footer>
         <p>تنظيم طمسة وتصميم الموقع ومحتواه يرجع إلى مريم والمشرفين.</p>
-        <p>── ⋆ ⋅  2026  ⋅ ⋆ ──</p>
+        <p>── ⋆ ⋅  ١٤٤٨هـ  ⋅ ⋆ ──</p>
     </footer>
 
 
 </div>
 <script>
+ 
+   const images = ['cat1.jpg', 'cat2.jpg', 'cat3.jpg', 'cat1.jpg', 'cat1.jpg', 'cat1.jpg', 'cat.jpg'];
+   const sounds = [
+new Audio('toy1.mp3'),
+new Audio('toy2.mp3'),
+new Audio('toy4.mp3'),
+new Audio('toy5.mp3'),
+new Audio('toy6.mp3'),
+new Audio('toy7.mp3')
+   ];
+
+   let index = 0;
+   const image = document.getElementById('soundImage');
+
+    image.addEventListener('click', () => {
+  sounds[index].currentTime = 0;
+  sounds[index].play();
+
+
+         image.src = images[index];
+
+  image.classList.remove('squish');
+  void image.offsetWidth;
+  image.classList.add('squish');
+
+  index = (index + 1) % images.length;
+});
+
+
     const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav a');
 
