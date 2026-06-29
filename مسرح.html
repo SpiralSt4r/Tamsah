@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curtain Animation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Gulzar&family=Lateef:wght@200;300;400;500;600;700;800&family=New+Tegomin&display=swap" rel="stylesheet">
+    <style> 
+
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        position: relative;
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: auto;
+        font-family: "Amiri", serif;
+         background: linear-gradient(to bottom, #F5F0E8, #F5F0E8, #d4c9b0aa);
+         background-attachment: fixed;
+    }
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0; bottom: 0;
+        right: 0;
+        width: 70px;
+        background: linear-gradient(to left, #D4C9B0, #F5F0E8, #D4C9B0);
+        border-left: 2px solid #C4B898;
+        z-index: 0;
+    }
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0; bottom: 0;
+        left: 0;
+        width: 60px;
+        background: linear-gradient(to right, #D4C9B0, #F5F0E8, #D4C9B0);
+        border-right: 2px solid #C4B898;
+        z-index: 0;
+    }
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeOut 1.5s ease forwards;
+    animation-delay: 1s;
+}
+@keyframes fadeOut {
+    from { opacity: 1; pointer-events: all;}
+    to { opacity: 0; visibility: hidden; pointer-events: none;}
+}
+    header {
+                z-index: 3;
+    h1 {
+     font-family:  'Gulzar', Helvetica, sans-serif; 
+     text-align: center; 
+     font-size: 50px;
+     margin: -5px;
+     }
+     p {
+       text-align: center; 
+        word-spacing: 0.1em; 
+        margin-top: -30px; 
+        color: rgb(133, 108, 93);
+        font-size: 13px;
+     }
+     img {
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       padding: 4px;
+       position: relative;
+       z-index: 1;
+     }
+    }
+    .frame {
+        border: 1px solid #77520d;
+        padding: 9px;
+        position: relative;
+        background:  linear-gradient(135deg, #d5a937, #C9A84C 25%, #F0D080 40%, #C9A84C 55%, #d5a937 70%, #C9A84C 85%, #F0D080);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+         z-index: 2;
+
+    }
+    .frame-inner {
+        border: 1px solid #77520d;
+        overflow: hidden;
+    }
+    .frame img {
+  max-width: 100;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  position: relative;
+}
+.teambanner1 {
+        padding: 3px;
+        position: relative;
+        font-family: "Aref Ruqaa", serif;
+        text-align: center;
+        color: #000000;
+        background:  linear-gradient(to right, #838383, #b4b4b4, #838383);
+        font-size: 10px;
+}
+.teambanner2 {
+        padding: 3px;
+        position: relative;
+        font-family: "Aref Ruqaa", serif;
+        text-align: center;
+        color: #000000;
+       background:  linear-gradient(to right, #d1aa3f, #f5cb57, #d1aa3f);
+       font-size: 10px;
+}
+
+
+.info {
+background: #ffffff;
+padding: 10px 30px;
+border: 1px solid #C4B898;
+font-size: 8px;
+text-align: right;
+color: #201f1e;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.062), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ z-index: 1;
+}
+.artworks {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+.paper {
+    display: flex; 
+    gap: 75px; 
+    justify-content: center; 
+    margin-top: -4px;
+}
+
+
+</style>
+</head>
+<body>
+ <div id="overlay"></div>
+
+   <audio id="Sound1" preload="auto">
+  <source src="sound-3.mp3" type="audio/mpeg">
+</audio>
+ <a href="index.html" style=" display: block; text-align: center; margin: 5px;">
+              <img src="mm.gif" alt="return" style="width:42px;height:42px;">
+           </a>
+    <header>
+        <h1>المتحف</h1>
+        <p>. ݁₊ ⊹ . ݁ الموسم الأول ⟡ ݁ ١٤٤٨هـ ݁ . ⊹ ₊ ݁.</p>
+    </header>
+
+             <!--  padding -->
+
+         <div style="padding: 6px;">  
+
+             <!--  framing -->
+
+           <div class="artworks">
+
+
+                <div class="frame">
+                     <div class="frame-inner">
+                         <!--  banner -->
+
+                             <div class="teambanner1">فريق ذهبي</div>
+
+                         <!--  banner -->
+                        <img src="33.png">
+                     </div>
+                </div>
+
+
+                 <div class="frame">
+                     <div class="frame-inner">
+                         <!--  banner -->
+
+                             <div class="teambanner2">فريق ذهبي</div>
+
+                         <!--  banner -->
+                        <img src="222.png">
+                     </div>
+                </div>
+
+
+           </div>
+           
+             <!--  framing -->
+
+            <!--  card  -->
+
+                 <div class="paper"> 
+                     <div class="info">
+                         <p>الرسام -- </p>
+                         <p> الهدف -- </p>
+                         <p> مجموع النقاط ---</p>
+                     </div>
+
+                     <div class="info">
+                         <p>الرسام -- </p>
+                         <p> الهدف -- </p>
+                         <p> مجموع النقاط ---</p>
+                     </div>
+                 </div>
+
+            <!--  card  -->
+
+            </div>  
+
+             <!--  padding -->
+            <!--  padding -->
+
+         <div style="padding: 6px;">  
+
+             <!--  framing -->
+
+           <div class="artworks">
+
+
+                <div class="frame">
+                     <div class="frame-inner">
+                         <!--  banner -->
+
+                             <div class="teambanner1">فريق ذهبي</div>
+
+                         <!--  banner -->
+                        <img src="555.gif">
+                     </div>
+                </div>
+
+
+                 <div class="frame">
+                     <div class="frame-inner">
+                         <!--  banner -->
+
+                             <div class="teambanner2">فريق ذهبي</div>
+
+                         <!--  banner -->
+                        <img src="44.png">
+                     </div>
+                </div>
+
+
+           </div>
+           
+             <!--  framing -->
+
+            <!--  card  -->
+
+                 <div class="paper"> 
+                     <div class="info">
+                         <p>الرسام -- </p>
+                         <p> الهدف -- </p>
+                         <p> مجموع النقاط ---</p>
+                     </div>
+
+                     <div class="info">
+                         <p>الرسام -- </p>
+                         <p> الهدف -- </p>
+                         <p> مجموع النقاط ---</p>
+                     </div>
+                 </div>
+
+            <!--  card  -->
+
+            </div>  
+
+             <!--  padding -->
+
+  <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const sound = document.getElementById('Sound1');
+            sound.currentTime = 0;
+            sound.play().catch(err => {
+                console.warn("Audio playback was blocked:", err);
+            });
+        });
+    </script>
+</body>
+</html>
