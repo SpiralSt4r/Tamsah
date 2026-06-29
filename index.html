@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Gulzar&family=Lateef:wght@200;300;400;500;600;700;800&family=New+Tegomin&display=swap" rel="stylesheet">
+    <style> 
+    
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+body {
+    font-family: "Amiri", serif;
+    background-color: #dedbd3;
+    direction: rtl;
+    unicode-bidi: plaintext;
+}
+ol {
+    list-style: none;
+    direction: rtl;
+    counter-reset: my-counter;
+     padding-right: 20px;
+     text-align: right;
+     font-size: 500;
+}
+ol li {
+    counter-increment: my-counter;
+    list-style: none;
+}
+ol li::before {
+    content: counter(my-counter, arabic-indic);
+    font-size: 26px;
+    font-weight: bold;
+    color: #7e3c3c;
+    text-align: right;
+    padding-left: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-right: 20px ;
+}
+ul li::before {
+    font-size: 20px;
+     text-align: right;
+     content: '★';
+     color: #7e3c3c;
+    padding-left: 4px;
+}
+ul ul {
+    list-style: none;
+    padding: 0;
+    margin-right: 20px ;
+}
+ul ul li::before {
+    font-size: 20px;
+     text-align: right;
+     content: '✧';
+     color: #7e3c3c;
+    padding-left: 4px;
+}
+
+.page {
+  position: relative;
+}
+
+.page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+   z-index: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent, transparent 31px,
+    rgba(100, 80, 60, 0.08) 31px, rgba(100, 80, 60, 0.08) 32px
+  );
+}
+
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #7e3c3c;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: bold;
+   color: rgb(24, 18, 11);
+}
+
+p {
+    font-weight: bold;
+    font-size: small;
+    color: rgb(24, 18, 11);
+}
+
+
+img {
+display: block;
+margin-left: auto;
+margin-right: auto;
+position: relative;
+z-index: 1;
+}
+
+
+header {
+ border-bottom: 2.5px solid #35271e;
+ padding: 2px 0px 3px 0px;
+}
+
+nav {
+        position: sticky;
+        z-index: 100;
+        padding: 7.5px;
+    background-color:#cecbc2;
+    align-items: stretch;
+     text-align: center;
+  border-bottom: 2.5px solid #35271e;
+top: 0;
+
+}
+nav a {
+    color: #35271e !important;
+  font-family: "Lateef", serif;
+  padding: 7px 14px;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+   margin-left: 3px;
+    margin-right: -6px;
+     border-left: 2px dashed #746760 ;
+    align-items: center;
+}
+
+nav a:last-child
+{
+    border-left: none;
+}
+
+nav a.active {
+    color: #7e3c3c !important;
+    font-weight: 700;
+}
+
+
+@keyframes myAnimation {
+  0% , 50%, 100%  {left:-0; top:-15px;}
+  25% , 75% {left:0px; top:15px;}
+}
+
+ .squish {
+        animation: squish 0.2s ease;
+ }
+    @keyframes squish {
+        0%, 100% { transform: scale(1, 1); /* Normal size */}
+        25% { transform: scale(1.1, 0.9); /* Wider, shorter */ }
+        50% { transform: scale(0.9, 1.1); /* Taller, narrower */ }
+        75% { transform: scale(1.05, 0.95); /* Slight squish */}
+    }
+
+
+section {
+    h2{
+       margin-right: 13px;
+       font-size: 30px;
+       font-family: "Aref Ruqaa", serif;
+    }
+    p {
+         margin-left: 18px;
+         margin-right: 18px;
+    }
+    border-bottom: 2px solid #bdbaa8;
+    padding: 11px 0px 25px 0px;
+     scroll-margin-top: 50px;
+}
+
+.teamnames {
+display: flex;
+justify-content: space-between;
+max-width: 250px;
+margin: 0 auto;
+font-size: 20px;
+font-weight: bold;
+font-family: "Aref Ruqaa", serif;
+}
+
+.bar-labels {
+display: flex;
+justify-content: space-between;
+max-width: 340px;
+margin: 0 auto;
+font-size: 13px;
+font-weight: bold;
+}
+.bar {
+height: 22px;
+display: flex;
+direction: ltr;
+border: 2px solid #35271e;
+max-width: 340px;
+margin: 10px auto;
+border-radius: 10px;
+overflow: hidden;
+
+}
+
+.timeline {
+    position: relative;
+    max-width: 340px;
+    margin: 40px auto;
+    width: 100%;
+
+}
+
+.timeline-date {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #35271e;
+    margin-bottom: 10px;
+    direction: rtl
+}
+
+.timeline-track {
+    height: 6px;
+    background: #ada49b;
+    border-radius: 3px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.timeline-fill {
+height: 100%;
+background: #9d5d5d;
+border-radius: 3px;
+position: absolute;
+right: 0; top: 0; bottom: 0;
+}
+
+.timeline-star {
+    position: absolute;
+    top: 3px;
+    transform: translate(50%, 90%);
+    font-size: 22px;
+}
+
+.timeline-label {
+text-align: center;
+margin-top: 12px;
+font-size: 13px;
+font-weight: bold;
+color: #35271e;
+}
+
+
+.torn {
+    width: 100%; height: 26px;
+    background: #a9988f45;
+    clip-path: polygon(
+      0% 0%, 3% 60%, 6% 20%, 9% 80%, 12% 30%, 15% 90%, 18% 40%,
+      21% 70%, 24% 20%, 27% 85%, 30% 35%, 33% 75%, 36% 25%,
+      39% 80%, 42% 30%, 45% 70%, 48% 20%, 51% 90%, 54% 40%,
+      57% 75%, 60% 25%, 63% 85%, 66% 35%, 69% 70%, 72% 20%,
+      75% 80%, 78% 30%, 81% 65%, 84% 15%, 87% 75%, 90% 25%,
+      93% 80%, 96% 30%, 100% 60%, 100% 0%
+    );
+}
+
+
+.sum {
+   border: 3px dashed #746760;
+  border-radius: 20px;
+  padding: 20px 20px 20px;
+  max-width: 200px;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+  p {
+    font-size: 10px;
+    color: rgb(133, 108, 93);
+    }
+  }
+
+.sum::before {
+  content: '✦  للتواصل ✦';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #dedbd3;
+  padding: 0 10px;
+  font-size: 15px;
+  color: #746760;
+  white-space: nowrap;
+}
+
+
+footer {
+ p{
+   padding: 2px;
+   font-family: 'Cascadia', sans-serif; 
+   text-align: center; 
+   margin-bottom: auto; 
+   font-weight: 700; 
+   font-style: italic; 
+   word-spacing: 0.2em ;
+    font-size: 8px; 
+    color: rgb(133, 108, 93)
+ }
+
+}
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+
+    <header>
+     <p style="  font-family: 'Cascadia', sans-serif; text-align: center; margin-bottom: -30px; font-weight: 700; font-style: italic; word-spacing: 0.2em ; font-size: 8px; color: rgb(133, 108, 93)">⭑ الموسم الأول من</p>
+     <h1 style=" font-family:  'Gulzar', Helvetica, sans-serif; text-align: center; font-size: 50px;">طمسة</h1>
+     <p style=" text-align: center;  word-spacing: 0.6em; margin-top: -80px; color: rgb(133, 108, 93)">حيث يولد الإبداع في حدود الدين.</p>
+    </header>
+
+
+    <nav> 
+      <a href="#Whoarewe">من نحن؟</a>
+      <a href="#guide">دليل</a>
+      <a href="#Rules">القواعد</a>
+      <a href="#progress">تقدم الفرق</a>
+      <a href="#museum">المتحف</a>
+    </nav>
+
+
+    <section id="Whoarewe">
+     <h2>✷ من نحن ؟</h2>
+     <p>طمسة هو موقع لفعالية  مخصصة للرسامين، خصيصًا الطامسين. حيث يتم تقسيمنا إلى فريقين ( أو ثلاثة ) لنتقاتل بالفن. يهدف إلى لم شمل الطامسين ورفع روحهم الرياضية وتطوير مهاراتهم!</p>
+     <p>وعن من هي <i>طمسة كـ شخص؟</i> هذه مُرشتك بالطبع! سعيدةٌ لمساعدتك في أي وقت. إضغط عليها لترحيبها!</p>
+     <img id="soundImage"  src="Tamsah1.gif"  alt="Image one"  width="100" height="100">
+    </section>
+
+    
+    <div class="torn"></div>
+
+
+    <section id="guide">
+     <h2>✷ الدليل</h2>
+     <p style="margin-bottom: -10px ;"> حسنًا! فل نشرح المسابقة بشكل أكثر دقة </p>
+     <p style="margin-bottom: -10px ;"> في كل موسم ينقسم المتنافسين إلى فريقين - يتغير اسم الفرق لكل موسم -</p>
+     <p style="margin-bottom: -10px ;"> كل فريق يهجم على أعضاء الفريق الآخر برسمه ويسجل بها نقاط لفريقه</p>
+     <p style="margin-bottom: -10px ;"> الفريق الفائز هو الحاصل على أكبر عدد نقاط في نهاية الموسم.</p>
+     <p > ملاحظة </p>
+     <p style="margin-bottom: -10px ;"></p>
+     <p style="margin-bottom: -10px ;">ويتم حساب النقاط على الشكل التالي :</p>
+     <div style="display: flex; gap: 10px; align-items: center; ">
+       <ul>
+        <li>الرأس لوحده ← 0 نقطة</li>
+        <li>إلى منتصف الجسد ← 0 نقطة</li>
+        <li>كامل الجسد ← 0 نقطة</li>
+        <li>مع خلفية :</li>
+        <ul>
+               <li>خلفية بسيطة ← 0 نقطة</li>
+               <li>خلفية معقدة ← 0 نقطة</li>
+        </ul>
+         <li>إذا كان رسم تحريك :</li>
+        <ul>
+               <li>تحريك بسيط ← 0 نقطة</li>
+               <li>تحريك معقد ← 0 نقطة</li>
+        </ul>
+        <li>نوع الرسمة :</li>
+        <ul>
+               <li>رسمة بسيطة { تشيبي } ← 0 نقطة</li>
+               <li>رسمة معقدة ← 0 نقطة</li>
+        </ul>
+     </ul>       
+         <img src="cat.jpg" style="width: 100px;;">
+     </div>
+     <p > ملاحظة أُخرى، قد تزيد نقاطك كلما كانت التفاصيل أكثر { يعتمد على رأي المنسق - مريم أم المشرفين } </p>
+     <p > ملاحظة </p>
+    </section>
+
+
+     <div class="torn"></div>
+
+
+    <section id="Rules">
+         <h2>✷ القواعد</h2>
+         <p>عند رغبتك في الإلتحاق، هذه هي شروطنا وقواعدنا :</p>
+         <ol>
+			<li>أن تكوني فتاة</li>
+			<li>أن تكوني فوق ١٢ سنة</li>
+			<li>أن تكون المشاركات لا تحتوي على ذوات أرواح <br> { أي أن ترسمي ملمح واحد أو الأفضل بدون ملامح }</li>
+            <li>عدم استخدام الذكاء الاصطناعي لأي من الهجمات</li>
+            <li> أن يكون حسابك خالي من المحرمات  <br> { الموسيقى، فتيات غير محجبات أو محتوى غير لائق }</li>
+            <li></li>
+         </ol>
+         <p>إذا لم يتم توفي هذه الشروط أو عدم الإلتزام بها، فلن تلتحق في المسابقة وقد تُطرد من الإلتحاق فور معرفتنا بالمخالفة.</p>
+    </section>
+
+
+     <div class="torn"></div>
+
+
+    <section id="progress">
+        <h2>✷ تقدم الفريقين</h2>
+        <p>حيث يتولد الإبداع بين حدود الدين.</p>
+        <div class="teamnames">
+            <span style="color: #7e3c3c;">الذهبي</span>
+            <span style="color: #837575;">الفضي</span>
+        </div>
+            <img src="cat.jpg"  alt="Image one"  width="200" height="200">
+        <div class="bar-labels">
+            <span style="color: #7e3c3c;"> 30 نقطة </span>
+            <span style="color: #837575;"> 50 نقطة </span>
+        </div>
+
+
+        <div class="bar">
+            <div id="team1" style=" background: #9d5d5d; height: 100%;"></div>
+            <div id="team2" style=" background: #929292; height: 100%;"></div>
+        </div>
+
+
+
+
+        <div class="timeline">
+             <p style=" text-align: center; margin-top: 12px; margin-bottom: -12px; font-size: 18px; font-weight: bold; color: #35271e;"> مدة الموسم </p> 
+             <div class="timeline-date">
+               <span> محرم 9</span>
+               <span> صفر 17 </span>
+             </div>
+         <div class="timeline-track">
+            <div class="timeline-fill" id="fill"></div>
+         </div>
+            <span class="timeline-star" id="star">✦</span>
+        <div class="timeline-label" id="label">جاري الحساب</div>
+    </div>
+    </section>
+
+
+    <div class="torn"></div>
+
+
+    <section id="museum">
+       <h2>✷ المتحف</h2>
+       <p>لرؤية مشاركات الموسم الحالي، لما لا تُجرب الدخول لمتحفنا؟</p>
+       <a href="مسرح.html">
+          <img src="mm.gif" alt="HTML tutorial" style="width:75px;height:75px;">
+       </a>
+       <p>وإذا كُنت تريد رؤية الفريق الفائز - أو تاريخ الفائزين - يمكنك <br> الدخول عبر هذا الباب!</p>
+       <a href="Timeline.html">
+          <img src="door.gif" alt="HTML tutorial" style="width:75px;height:75px;">
+       </a>
+    </section>
+
+
+    <div class="torn"></div>
+
+
+    <div class="sum">
+       <p>للاستفسار حول طمسة، يمكنك التواصل عبر منصة الإستغرام</p>
+       <a href="https://www.instagram.com/spiral_st4r?igsh=ZDBkeGtuN3hzNmk%3D&utm_source=qr" style="text-decoration-style: wavy; text-decoration-color: #ada49b;">
+      <h2 style=" font-family: 'New Tegomin', serif; text-align: center;">@Spiral_St4r</h2>
+        </a>
+       <p>أضغطي على مرشدتك اللطيفة لإرسال مشاركتك ووضعها في المتحف!</p> 
+       <a href="https://docs.google.com/forms/d/e/1FAIpQLScq8V1qWfQUuzt2ZPaqtAhLnvGqEwH_eD7HDaDjeuCpAa_RoQ/viewform?usp=publish-editor">
+           <img src="Tamsah1.gif"  alt="art" style="width: 100px;;height: 100px;;   animation: squish 1s ease-in-out infinite;">
+        </a>
+    </div>
+
+
+    <footer>
+        <p>تنظيم طمسة وتصميم الموقع ومحتواه يرجع إلى مريم والمشرفين.</p>
+        <p>── ⋆ ⋅  ١٤٤٨هـ  ⋅ ⋆ ──</p>
+    </footer>
+
+
+</div>
+<script>
+ 
+   const images = ['Tamsah1.gif', 'cat2.jpg', 'cat3.jpg', 'TamsahSmash.gif', 'TamsahSmash.gif', 'TamsahSmash.gif'];
+   const sounds = [
+new Audio('toy1.mp3'),
+new Audio('toy2.mp3'),
+new Audio('toy4.mp3'),
+new Audio('toy5.mp3'),
+new Audio('toy6.mp3'),
+new Audio('toy7.mp3')
+   ];
+
+   let index = 0;
+   const image = document.getElementById('soundImage');
+
+    image.addEventListener('click', () => {
+  sounds[index].currentTime = 0;
+  sounds[index].play();
+
+
+         image.src = images[index];
+
+  image.classList.remove('squish');
+  void image.offsetWidth;
+  image.classList.add('squish');
+
+  index = (index + 1) % images.length;
+});
+
+
+    const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a');
+
+window.addEventListener('scroll', () => {
+  sections.forEach(section => {
+    const top    = section.offsetTop - 60;
+    const bottom = top + section.offsetHeight;
+
+    if (window.scrollY >= top && window.scrollY < bottom) {
+      navLinks.forEach(link => link.classList.remove('active'));
+      const active = document.querySelector(`nav a[href="#${section.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+});
+
+
+
+    const احمر = 50;  /* ← غيري هذا */
+    const ازرق = 30;  /* ← وهذا */
+
+     const مجموع = احمر + ازرق;
+     document.getElementById('team1').style.width = (احمر / مجموع * 100) + '%';
+     document.getElementById('team2').style.width = (ازرق / مجموع * 100) + '%';
+
+
+  const start = new Date('2026-06-25');
+  const end   = new Date('2026-07-31');
+  const now   = new Date();
+
+  const total    = end - start;
+  const passed   = now - start;
+  const pct      = Math.min(Math.max(passed / total * 100, 0), 100).toFixed(1);
+  const daysLeft = Math.max(0, Math.ceil((end - now) / 86400000));
+
+  function toArabic(n) {
+  return n.toString().replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+  }
+
+  document.getElementById('fill').style.width = pct + '%';
+  document.getElementById('star').style.right  = pct + '%';
+ document.getElementById('label').textContent =
+  daysLeft > 0 ? 'متبقي ' + toArabic(daysLeft) + ' يوم' : 'انتهى الموسم';
+</script>
+</body>
+</html>
