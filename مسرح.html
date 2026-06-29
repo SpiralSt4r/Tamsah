@@ -4,86 +4,253 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curtain Animation</title>
-<style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Gulzar&family=Lateef:wght@200;300;400;500;600;700;800&family=New+Tegomin&display=swap" rel="stylesheet">
+    <style> 
+
+    html {
+        scroll-behavior: smooth;
+    }
     body {
+        position: relative;
         margin: 0;
         height: 100vh;
         overflow: hidden;
-        font-family: Arial, sans-serif;
+        font-family: "Amiri", serif;
+         background: linear-gradient(to bottom, #F5F0E8, #F5F0E8, #d4c9b0aa);
     }
-
-    /* Container for the curtain */
-    .curtain {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        background: #000;
-    }
-
-    /* Left and right panels */
-    .panel {
-        position: absolute;
-        top: 0;
-        width: 50%;
-        height: 100%;
-        background: rgb(66, 35, 41);
-        transition: transform 1.5s ease-in-out;
-        z-index: 2;
-    }
-
-    .left {
-        left: 0;
-        transform: translateX(0);
-    }
-
-    .right {
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0; bottom: 0;
         right: 0;
-        transform: translateX(0);
+        width: 60px;
+        background: linear-gradient(to left, #D4C9B0, #F5F0E8, #D4C9B0);
+        border-left: 2px solid #C4B898;
+        z-index: 0;
     }
-
-    /* Content behind the curtain */
-    .content {
-        position: absolute;
-        top: 0;
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0; bottom: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('https://picsum.photos/1200/800') center/cover no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 2rem;
+        width: 60px;
+        background: linear-gradient(to right, #D4C9B0, #F5F0E8, #D4C9B0);
+        border-right: 2px solid #C4B898;
+        z-index: 0;
+    }
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeOut 1.5s ease forwards;
+    animation-delay: 1s;
+}
+@keyframes fadeOut {
+    from { opacity: 1; pointer-events: all;}
+    to { opacity: 0; visibility: hidden; pointer-events: none;}
+}
+    header {
+    h1 {
+     font-family:  'Gulzar', Helvetica, sans-serif; 
+     text-align: center; 
+     font-size: 50px;
+     margin-top: -30px;
+     }
+     p {
+       text-align: center; 
+        word-spacing: 0.6em; 
+        margin-top: -20px; 
+        color: rgb(133, 108, 93);
+     }
+     img {
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       padding: 4px;
+       position: relative;
+       z-index: 1;
+     }
+    }
+    .frame {
+        border: 1px solid #ae8b57;
+        padding: 5px;
+        position: relative;
         z-index: 1;
-    }
+        background: linear-gradient( #ffdd8f, #ffe8c3, #ffc94b);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+         z-index: 2;
 
-    /* When curtain opens */
-    .open .left {
-        transform: translateX(-100%);
     }
+    .frame-inner {
+        border: 1px solid #8b6c4c;
+    }
+    .frame img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+  position: relative;
+}
+.info {
+background: #ffffff;
+padding: 10px 30px;
+border: 1px solid #C4B898;
+font-size: 8px;
+text-align: right;
+color: #201f1e;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.062), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ z-index: 1;
+}
 
-    .open .right {
-        transform: translateX(100%);
-    }
+
 </style>
 </head>
 <body>
+ <div id="overlay"></div>
 
-<div class="curtain" id="curtain">
-    <div class="panel left"></div>
-    <div class="panel right"></div>
-    <div class="content">
-        🎭 Welcome to the Show!
-    </div>
-</div>
+   <audio id="Sound1" preload="auto">
+  <source src="sound-3.mp3" type="audio/mpeg">
+</audio>
+ <a href="index.html" style=" display: block; text-align: center;">
+              <img src="cat.jpg" alt="return" style="width:42px;height:42px;">
+           </a>
 
-<script>
-    // Automatically open curtain after 1 second
-    window.onload = function() {
-        setTimeout(() => {
-            document.getElementById('curtain').classList.add('open');
-        }, 1000);
-    };
-</script>
+         <div style="padding: 6px;">
 
+           <div style="display: flex; gap: 40px; justify-content: center;">
+
+
+                <div class="frame">
+                     <div class="frame-inner">
+                        <img src="cat.jpg">
+                     </div>
+                </div>
+
+
+                 <div class="frame">
+                     <div class="frame-inner">
+                        <img src="cat1.jpg">
+                     </div>
+                </div>
+
+
+           </div>
+               <div style="display: flex; gap: 70px; justify-content: center; margin-top: -4px;">
+
+
+               <div class="info">
+                <p>الرسام -- </p>
+                <p> الهدف -- </p>
+                <p> مجموع النقاط ---</p>
+               </div>
+
+               <div class="info">
+                <p>الرسام -- </p>
+                <p> الهدف -- </p>
+                <p> مجموع النقاط ---</p>
+               </div>
+
+               </div>
+
+        </div>
+
+        <div style="padding: 6px;">
+
+           <div style="display: flex; gap: 40px; justify-content: center;">
+
+
+                <div class="frame">
+                     <div class="frame-inner">
+                        <img src="cat.jpg">
+                     </div>
+                </div>
+
+
+                 <div class="frame">
+                     <div class="frame-inner">
+                        <img src="cat1.jpg">
+                     </div>
+                </div>
+
+
+           </div>
+               <div style="display: flex; gap: 70px; justify-content: center; margin-top: -4px;">
+
+
+               <div class="info">
+                <p>الرسام -- </p>
+                <p> الهدف -- </p>
+                <p> مجموع النقاط ---</p>
+               </div>
+
+               <div class="info">
+                <p>الرسام -- </p>
+                <p> الهدف -- </p>
+                <p> مجموع النقاط ---</p>
+               </div>
+
+               </div>
+               
+        </div>
+
+        <div style="padding: 6px;">
+
+           <div style="display: flex; gap: 40px; justify-content: center;">
+
+
+                <div class="frame">
+                     <div class="frame-inner">
+                        <img src="cat.jpg">
+                     </div>
+                </div>
+
+
+                 <div class="frame">
+                     <div class="frame-inner">
+                        <img src="cat1.jpg">
+                     </div>
+                </div>
+
+
+           </div>
+               <div style="display: flex; gap: 70px; justify-content: center; margin-top: -4px;">
+
+
+               <div class="info">
+                <p>الرسام -- </p>
+                <p> الهدف -- </p>
+                <p> مجموع النقاط ---</p>
+               </div>
+
+               <div class="info">
+                <p>الرسام -- </p>
+                <p> الهدف -- </p>
+                <p> مجموع النقاط ---</p>
+               </div>
+
+               </div>
+               
+        </div>
+        
+
+
+
+  <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const sound = document.getElementById('Sound1');
+            sound.currentTime = 0;
+            sound.play().catch(err => {
+                console.warn("Audio playback was blocked:", err);
+            });
+        });
+    </script>
 </body>
+</html>
