@@ -210,6 +210,7 @@ max-width: 340px;
 margin: 10px auto;
 border-radius: 10px;
 overflow: hidden;
+background: #ada49b;
 
 }
 
@@ -344,7 +345,7 @@ footer {
 
     <section id="Whoarewe">
      <h2>✷ من نحن ؟</h2>
-     <p>طمسة هو موقع لفعالية  مخصصة للرسامين، خصيصًا الطامسين. حيث يتم تقسيمنا إلى فريقين ( أو ثلاثة ) لنتقاتل بالفن. يهدف إلى لم شمل الطامسين ورفع روحهم الرياضية وتطوير مهاراتهم!</p>
+     <p>طمسة هو موقع لفعالية  مخصصة للرسامين، خصيصًا الطامسين. حيث يتم تقسيمنا إلى فريقين لنتقاتل بالفن. يهدف إلى لم شمل الطامسين ورفع روحهم الرياضية وتطوير مهاراتهم!</p>
      <p>وعن من هي <i>طمسة كـ شخص؟</i> هذه مُرشتك بالطبع! سعيدةٌ لمساعدتك في أي وقت. إضغط عليها لترحيبها!</p>
      <img id="soundImage"  src="Tamsah1.gif"  alt="Image one"  width="100" height="100">
     </section>
@@ -362,7 +363,7 @@ footer {
      <p > ملاحظة </p>
      <p style="margin-bottom: -10px ;"></p>
      <p style="margin-bottom: -10px ;">ويتم حساب النقاط على الشكل التالي :</p>
-     <div style="display: flex; gap: 10px; align-items: center; ">
+     <div style="display: flex; gap: 2px; align-items: end; ">
        <ul>
         <li>الرأس لوحده ← 0 نقطة</li>
         <li>إلى منتصف الجسد ← 0 نقطة</li>
@@ -383,7 +384,7 @@ footer {
                <li>رسمة معقدة ← 0 نقطة</li>
         </ul>
      </ul>       
-         <img src="cat.jpg" style="width: 100px;;">
+         <img src="teaching.gif" style="width: 140px; ">
      </div>
      <p > ملاحظة أُخرى، قد تزيد نقاطك كلما كانت التفاصيل أكثر { يعتمد على رأي المنسق - مريم أم المشرفين } </p>
      <p > ملاحظة </p>
@@ -413,15 +414,16 @@ footer {
 
     <section id="progress">
         <h2>✷ تقدم الفريقين</h2>
-        <p>حيث يتولد الإبداع بين حدود الدين.</p>
+        <p> تُريد أن تعرف كم تقدم الفريقين عن بعضهم؟ فهذا الشريط لك! </p>
+        <p>تقريبًا كُل أسبوع او أسبوعين تتجدد النقاط { لكي نجمع نقاط الفريقين } </p>
         <div class="teamnames">
-            <span style="color: #7e3c3c;">الذهبي</span>
-            <span style="color: #837575;">الفضي</span>
+            <span style="color: #837575;"> فريق 1 </span>
+            <span style="color: #7e3c3c;"> فريق 2 </span>
         </div>
             <img src="cat.jpg"  alt="Image one"  width="200" height="200">
         <div class="bar-labels">
-            <span style="color: #7e3c3c;"> 30 نقطة </span>
-            <span style="color: #837575;"> 50 نقطة </span>
+            <span style="color: #837575;"> ٠ نقطة </span>
+            <span style="color: #7e3c3c;"> ٠ نقطة </span>
         </div>
 
 
@@ -455,11 +457,11 @@ footer {
        <h2>✷ المتحف</h2>
        <p>لرؤية مشاركات الموسم الحالي، لما لا تُجرب الدخول لمتحفنا؟</p>
        <a href="مسرح.html">
-          <img src="mm.gif" alt="HTML tutorial" style="width:75px;height:75px;">
+          <img src="mm.gif" alt="Big curtain" style="width:75px;height:75px;">
        </a>
        <p>وإذا كُنت تريد رؤية الفريق الفائز - أو تاريخ الفائزين - يمكنك <br> الدخول عبر هذا الباب!</p>
        <a href="Timeline.html">
-          <img src="door.gif" alt="HTML tutorial" style="width:75px;height:75px;">
+          <img src="door.gif" alt="Door" style="width:75px;height:75px;">
        </a>
     </section>
 
@@ -486,7 +488,21 @@ footer {
 
 
 </div>
+
+<audio id="Sound2" preload="auto">
+  <source src="doorclose.mp3" type="audio/mpeg">
+</audio>
+
 <script>
+
+
+window.addEventListener('DOMContentLoaded', () => {
+            const sound = document.getElementById('Sound2');
+            sound.currentTime = 0;
+            sound.play().catch(err => {
+                console.warn("Audio playback was blocked:", err);
+            });
+        });
  
    const images = ['Tamsah1.gif', 'cat2.jpg', 'cat3.jpg', 'TamsahSmash.gif', 'TamsahSmash.gif', 'TamsahSmash.gif'];
    const sounds = [
@@ -534,8 +550,8 @@ window.addEventListener('scroll', () => {
 
 
 
-    const احمر = 50;  /* ← غيري هذا */
-    const ازرق = 30;  /* ← وهذا */
+    const احمر = 1;  /* ← غيري هذا */
+    const ازرق = 1;  /* ← وهذا */
 
      const مجموع = احمر + ازرق;
      document.getElementById('team1').style.width = (احمر / مجموع * 100) + '%';

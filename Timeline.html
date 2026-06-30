@@ -14,10 +14,21 @@
 
    body {
        font-family: "Amiri", serif;
-       background-color: #dedbd3;
        direction: rtl;
        unicode-bidi: plaintext; 
-       background: linear-gradient(to top, #c2b8a7, #F5F0E8);
+       background: #d1c3b4;
+       background-image: repeating-linear-gradient(
+       0deg,
+       #7e3c3c11,
+       #7e3c3c11 2px,
+       transparent 2px,
+       transparent 9px
+       );
+      background-attachment: fixed;
+      p {
+         font-family: "Lateef", serif;
+        font-weight: bold;
+      }
     }
 
     header {
@@ -25,13 +36,14 @@
      font-family:  'Gulzar', Helvetica, sans-serif; 
      text-align: center; 
      font-size: 50px;
-     margin-top: -30px;
+     margin-top: -10px;
+     margin-bottom: -10px;
      }
      p {
        text-align: center; 
         word-spacing: 0.6em; 
         margin-top: -20px; 
-        color: rgb(133, 108, 93);
+        color: #7e3c3c;
      }
      img {
        display: block;
@@ -63,51 +75,52 @@
 
     .info {
         text-align: center;
-        padding: 10px 0;
+        padding: 1px 0;
         p {
            margin: 2px 0;
-           color: #746760;
+           color: #7e3c3c;
         }
         h2 {
             margin: -1px 0;
         }
-        img {
+    }
+    img {
             width: 200px;
             margin: 8px;
-            border: 2px solid #746760;
+            border: 2px solid #7e3c3c;
             border-radius: 20px;
         }
-    }
 
 </style>
 </head>
 <body>
     <header>
            <a href="index.html">
-              <img src="door.gif" alt="return" style="width:42px;height:42px;">
+              <img src="door.gif" alt="return" style="width:60px;height:60px; border: none;">
            </a>
     <h1>المواسم</h1>
-    <p>  الموسم الحالي -> الموسم الأول </p>
+    <p style="margin-bottom: 4px;  font-family: 'Amiri', serif;">  الموسم الحالي  ✶ الموسم الأول </p>
     </header>
     <div class="timeline">
 
-      <div class="line" style="background: #80736b;"></div>
-      <div class="dot" style="background: #80736b;"></div>
+      
       <div class="info">
           <p> 2026 </p>
           <h2> الموسم الأول </h2>
           <p> لم يتم الحسم </p>
-          <img src="cat.jpg" style="border: 2px dashed #746760;">
+          <img src="unknown.gif" style="border: 3px dashed #7e3c3c;">
       </div>
     
-      <div class="line" style="background: #a5a5a5;"></div>
-      <div class="dot" style="background: #a5a5a5;"></div>
+      <div class="line" style="background: #7e3c3c;  margin-top: -20px; "></div>
+      <div class="dot" style="background: #7e3c3c; margin-bottom: 10px; "></div>
       <div class="info">
-          <p> 2025 </p>
-          <h2> الموسم التجريبي </h2>
+          <p> ١٤٤٨هـ </p>
+          <h2> الموسم الأول </h2>
           <p> لا يوجد فائز </p>
-          <img src="cat.jpg">
       </div> 
+      <div class="dot" style="background: #7e3c3c; margin-top: 10px;"></div>
+      <div class="line" style="background: #7e3c3c;  margin-bottom: -20px; "></div>
+       <img src="unknown.gif" style="border: 3px dashed #7e3c3c;">
 
     </div>
       <audio id="Sound1" preload="auto">
